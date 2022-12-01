@@ -1,0 +1,12 @@
+[package]
+name = "aoc22"
+description = "My Advent of Code 2022 solutions"
+authors = ["NotNite <hi@notnite.com>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Logging
+chrono = "0.4.23"
+fern = "0.6.1"
+log = "0.4.17"
