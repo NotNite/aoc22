@@ -13,10 +13,8 @@ impl Puzzle for DayThree {
             let mut common = Vec::new();
 
             let half = line.len() / 2;
-            let mut first = line[..half].to_string();
-            let mut second = line[half..].to_string();
-
-            println!("first: {}, second: {}", first, second);
+            let first = line[..half].to_string();
+            let second = line[half..].to_string();
 
             for char in first.chars() {
                 if second.contains(char) {
@@ -26,8 +24,6 @@ impl Puzzle for DayThree {
 
             common = common.into_iter().unique().collect::<Vec<_>>();
 
-            println!("common: {:?}", common);
-
             for char in common {
                 let char_num = char as u32;
                 let priority = if char.is_lowercase() {
@@ -35,7 +31,7 @@ impl Puzzle for DayThree {
                 } else {
                     (char_num - 64) + 26
                 };
-                println!("char: {}, num: {}, priority: {}", char, char_num, priority);
+
                 priorities.push(priority);
             }
         }
@@ -49,11 +45,11 @@ impl Puzzle for DayThree {
         let mut priorities = Vec::new();
 
         for bap in &input.into_iter().chunks(3) {
-            let mut bap = bap.collect::<Vec<_>>();
+            let bap = bap.collect::<Vec<_>>();
 
-            let mut first = bap[0].to_string();
-            let mut second = bap[1].to_string();
-            let mut third = bap[2].to_string();
+            let first = bap[0].to_string();
+            let second = bap[1].to_string();
+            let third = bap[2].to_string();
 
             let mut common = Vec::new();
 
