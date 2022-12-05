@@ -54,7 +54,6 @@ impl Puzzle for DayFive {
 
             for _ in 0..move_count {
                 let mut vec = state.get_mut(&move_from).unwrap().to_vec();
-                println!("vec: {:?}", vec);
                 let item = vec.pop().unwrap();
                 state.insert(move_from, vec);
 
