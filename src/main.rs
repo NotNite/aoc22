@@ -12,6 +12,7 @@ fn get_day(day: u8) -> Option<Box<dyn Puzzle>> {
         4 => Some(Box::new(days::four::DayFour)),
         5 => Some(Box::new(days::five::DayFive)),
         6 => Some(Box::new(days::six::DaySix)),
+        7 => Some(Box::new(days::seven::DaySeven)),
         _ => None,
     }
 }

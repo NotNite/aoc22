@@ -19,6 +19,7 @@ dependencies = [
  "fern",
  "itertools",
  "log",
+ "vfs",
 ]
 
 [[package]]
@@ -292,6 +293,12 @@ name = "unicode-width"
 version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c0edd1e5b14653f783770bce4a4dabb4a5108a5370a5f5d8cfe8710c361f6c8b"
+
+[[package]]
+name = "vfs"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f595a49341cf9178d418a68c1454a400ac03fb2cb5b9470f89b5b7f8d9027977"
 
 [[package]]
 name = "wasi"
