@@ -93,6 +93,10 @@ fn calc_move_for_outcome(opponent: Move, wanted_state: GameResult) -> Move {
 }
 
 impl Puzzle for DayTwo {
+    fn test(&self) -> (String, String) {
+        ("15".to_string(), "12".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let input = calc_input(input);
 

@@ -3,6 +3,10 @@ use crate::puzzle::Puzzle;
 pub struct DaySix;
 
 impl Puzzle for DaySix {
+    fn test(&self) -> (String, String) {
+        ("7".to_string(), "19".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let input = input.chars().collect::<Vec<char>>();
         let windows = input.windows(4);

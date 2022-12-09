@@ -87,6 +87,10 @@ fn move_tail(head: Pos, tail: &mut Pos) {
 }
 
 impl Puzzle for DayNine {
+    fn test(&self) -> (String, String) {
+        ("13".to_string(), "1".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let instructions = input.lines();
 

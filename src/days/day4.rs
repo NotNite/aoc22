@@ -29,6 +29,10 @@ fn parse_input(input: String) -> Vec<(Range, Range)> {
 }
 
 impl Puzzle for DayFour {
+    fn test(&self) -> (String, String) {
+        ("2".to_string(), "4".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let ranges_vec = parse_input(input);
         let mut count = 0;

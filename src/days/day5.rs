@@ -41,6 +41,10 @@ fn parse_input(input: String) -> HashMap<u8, Vec<String>> {
 }
 
 impl Puzzle for DayFive {
+    fn test(&self) -> (String, String) {
+        ("CMZ".to_string(), "MCD".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let mut state = parse_input(input.clone());
         let instructions = input.split("\n\n").last().unwrap().trim().lines();

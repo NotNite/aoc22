@@ -124,6 +124,10 @@ fn lmao(
 }
 
 impl Puzzle for DaySeven {
+    fn test(&self) -> (String, String) {
+        ("95437".to_string(), "24933642".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let (vfs, file_to_size) = parse_input(input);
 

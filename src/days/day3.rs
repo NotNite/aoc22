@@ -4,6 +4,10 @@ use itertools::Itertools;
 pub struct DayThree;
 
 impl Puzzle for DayThree {
+    fn test(&self) -> (String, String) {
+        ("157".to_string(), "70".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let input = input.trim().lines();
 

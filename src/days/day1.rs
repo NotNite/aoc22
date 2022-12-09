@@ -15,6 +15,10 @@ fn calc_groups(input: String) -> Vec<Vec<usize>> {
 }
 
 impl Puzzle for DayOne {
+    fn test(&self) -> (String, String) {
+        ("24000".to_string(), "45000".to_string())
+    }
+
     fn one(&self, input: String) -> String {
         let groups = calc_groups(input);
 

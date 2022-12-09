@@ -3,6 +3,10 @@ use crate::puzzle::Puzzle;
 pub struct DayEight;
 
 impl Puzzle for DayEight {
+    fn test(&self) -> (String, String) {
+        ("21".to_string(), "8".to_string())
+    }
+
     // I misunderstood pt1 so it's a bit verbose
     // whoops
     fn one(&self, input: String) -> String {
