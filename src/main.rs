@@ -14,53 +14,59 @@ fn get_day(day: u8) -> Option<Box<dyn Puzzle>> {
         7 => Some(Box::new(days::day7::DaySeven)),
         8 => Some(Box::new(days::day8::DayEight)),
         9 => Some(Box::new(days::day9::DayNine)),
+        10 => Some(Box::new(days::day10::DayTen)),
         _ => None,
     }
 }
 
 fn run_day(day: u8) {
     let puzzle = get_day(day).expect("day not implemented in get_day");
-
-    let test_input = std::fs::read_to_string(format!("test/day{}.txt", day));
-
-    if let Ok(test_input) = test_input {
-        let (one_test, two_test) = puzzle.test();
-
-        let one_test_result = puzzle.one(test_input.clone());
-        let two_test_result = puzzle.two(test_input);
-
-        assert!(
-            one_test_result == one_test,
-            "day {}, part 1 failed test (expected {}, got {})",
-            day,
-            one_test,
-            one_test_result
-        );
-        assert!(
-            two_test_result == two_test,
-            "day {}, part 2 failed test (expected {}, got {})",
-            day,
-            two_test,
-            two_test_result
-        );
-    } else {
-        eprintln!("warning: day {} has no test input", day);
-    }
-
     let input =
         std::fs::read_to_string(format!("input/day{}.txt", day)).expect("failed to read input");
+
     println!("day {}, part 1: {}", day, puzzle.one(input.clone()));
     println!("day {}, part 2: {}", day, puzzle.two(input));
 }
 
+fn test_day(day: u8) {
+    let puzzle = get_day(day).expect("day not implemented in get_day");
+    let test_input =
+        std::fs::read_to_string(format!("test/day{}.txt", day)).expect("failed to read test input");
+
+    let (one_test, two_test) = puzzle.test();
+
+    let one_test_result = puzzle.one(test_input.clone());
+    let two_test_result = puzzle.two(test_input);
+
+    if one_test_result != one_test {
+        eprintln!(
+            "warning: day {}, part 1 failed test (expected {}, got {})",
+            day, one_test, one_test_result
+        );
+    }
+
+    if two_test_result != two_test {
+        eprintln!(
+            "warning: day {}, part 2 failed test (expected {}, got {})",
+            day, two_test, two_test_result
+        );
+    }
+}
+
 fn main() {
     let day_str = std::env::args().nth(1);
+    let testing = std::env::args().nth(2).is_some();
 
     if let Some(day_str) = day_str {
         println!("running day {}", day_str);
 
         let day = day_str.parse::<u8>().expect("failed to parse day");
-        run_day(day);
+
+        if testing {
+            test_day(day);
+        } else {
+            run_day(day);
+        }
     } else {
         println!("running all days");
 
