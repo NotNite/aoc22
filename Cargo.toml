@@ -11,3 +11,6 @@ itertools = "0.10.5"
 
 # Day 7
 vfs = "0.8.0"
+
+# Day 12
+pathfinding = "4.0.0"
