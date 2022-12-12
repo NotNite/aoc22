@@ -4,7 +4,7 @@ pub struct DayTwelve;
 
 impl Puzzle for DayTwelve {
     fn test(&self) -> (String, String) {
-        ("31".to_string(), "todo".to_string())
+        ("31".to_string(), "29".to_string())
     }
 
     fn one(&self, input: String) -> String {
