@@ -1,5 +1,3 @@
-use std::ops::Index;
-
 use crate::puzzle::Puzzle;
 use serde::Deserialize;
 
